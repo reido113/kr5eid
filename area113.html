@@ -23,8 +23,8 @@
             }
             function success(position) {
                 x.innerHTML = "Ninja Located!" +
-                "<br>Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude +
+                "<br>Latitude: " + math.round(position.coords.latitude) +
+                "<br>Longitude: " + math.eound(position.coords.longitude)+
                 "<br>Your Shozoku Transparancy Has Been Restored." +
                 "<br>Travel Well Warrior";
             }
