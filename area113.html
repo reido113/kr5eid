@@ -15,5 +15,28 @@
     <body>
         <H1 slign->*** Area113 ***</H1>
         <h2>NO TRESPASSING SUKKA</H2>
+        <h1>Must Check Geolocation</h1>
+        <p>Click Button to get your coordinates.
+        </p><button onclick="getLocation()">Ninja Locator</button>
+        <p id="demo"></p>
+        
+        <script>
+        const x = document.getElementById("demo");
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(success, error);
+              } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+          }
+
+          function success(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+          }
+
+          function error() {
+             alert("Sorry, no position available.");
+           }
+         </script>
     </body>
 </html>
