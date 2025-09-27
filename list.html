@@ -1,0 +1,208 @@
+<!DOCTYPE html lang="en">
+
+<html>
+
+<!-- This is a test code that uses bootstrap
+ Original code idea is from
+ https://codewithmark.com/how-do-i-check-uncheck-a-checkbox-input-button-in-html-table
+ Thank you Mark.
+ -Reido113
+ -->
+
+  <head>
+    
+    <title> Checkbox CRUD Area113</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+
+    <script type="text/javascript">
+      $(document).ready(function($) 
+      {
+
+        //--->deletel single row > start
+        function remove_curr_tbl_row(ele) 
+        {	 
+          ele.closest('tr').css('background-color', 'red');
+          
+          ele.closest('tr').fadeOut('slow', function()
+          {
+            $(this).remove();
+          }); 	
+        };
+
+        $(document).on('click', '.btn_delete', function(event) 
+        {
+          event.preventDefault();
+
+          remove_curr_tbl_row($(this));
+        }); 		
+        //--->deletel single row > start
+        
+
+        //--->select/unselect all > start
+        function select_unselect_checkbox (this_el, select_el) 
+        {
+
+          if(this_el.prop("checked"))
+          {
+            select_el.prop('checked', true);
+          }
+          else
+          { 
+            select_el.prop('checked', false);				 
+          }
+        };
+
+        $(document).on('change', '.select_all_items', function(event) 
+        {
+          event.preventDefault();
+
+          var ele = $(document).find('.item_id'); 
+
+          select_unselect_checkbox($(this), ele); 
+        });
+        //--->select/unselect all > end
+
+
+
+        //--->deletel selected rows > start
+        function remove_all_checked_val(ele) 
+        {	 
+          ele.each(function(index, v1)
+          {   
+            if($(this).prop("checked")) 
+            {
+              $(this).closest('tr').css('background-color', 'red');
+              
+              $(this).closest('tr').fadeOut('slow', function()
+              {
+                $(this).remove();
+              }); 
+            } 
+          });
+        };
+        $(document).on('click', '.btn_delete_val', function(event) 
+        {
+          event.preventDefault();
+
+          var ele = $(document).find('.item_id'); 
+          var v1 = remove_all_checked_val(ele);
+        });
+        //--->deletel selected rows > end
+
+
+        //--->get selected rows values > start
+        function get_all_checked_val(ele, attr_lookup) 
+        {  
+          var get_obj = [];
+          ele.each(function(index, v1)
+          {   
+            if($(this).prop("checked")) 
+            {
+              get_obj.push($(this).attr(attr_lookup));
+            } 
+          });			
+          return get_obj;
+        };
+
+        $(document).on('click', '.btn_get_val', function(event) 
+        {
+          event.preventDefault();
+
+          var ele = $(document).find('.item_id'); 
+
+          var v1 = get_all_checked_val(ele, 'option_id');
+
+          var v2 = ''
+          +'<pre class="bg-secondary">' 
+          +JSON.stringify(v1, null, 5)
+          +'</pre>';
+
+          $(document).find('.post_msg').html(v2);
+
+        });		
+        //--->get selected rows values > end
+      
+    
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="container" style="padding-top:113px;">
+
+      <h3 class="text-center">HTML Table Check/Uncheck/Delete Rows (Single or Multiple)</h3>
+      <div class="btn btn-success btn_get_val">Get Values</div> | <div class="btn btn-primary btn_delete_val">Delete Bulk</div>
+
+      <div style="padding:21px;"></div>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td> Select<br> <input type="checkbox" class="select_all_items"></td>
+            <td>Line Num </td>
+            <td>Email</td>
+            <td>Option</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="item_id" option_id="1"> </td>
+            <td>1</td>
+            <td>mark@gmail.com</td>
+            <td><i class="fas fa-window-close btn_delete"></i></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="item_id" option_id="2"> </td>
+            <td>2</td>
+            <td>code@gmail.com</td>
+            <td><i class="fas fa-window-close btn_delete"></i></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="item_id" option_id="3"> </td>
+            <td>3</td>
+            <td>john@gmail.com</td>
+            <td><i class="fas fa-window-close btn_delete"></i></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div style="padding:10px;"></div>
+
+      <div class="post_msg"></div>
+    </div>
+
+  </body>
+
+</html>
+
+
+
+<!-- The following is a totally different code for basic knowledge-->
+<!-- <html lang="en">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>KR5EID</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+
+  <body>
+    <input type="checkbox" id="item-1" checked/>
+    <label for="item-1">Player 1</label>
+    
+    <input type="checkbox" id="item-2" />
+    <label for="item-2">Player 2</label>
+
+    <input type="checkbox" id="item-3"/>
+    <label for="item-3">Player 3</label>
+  </body>
+
+</html>-->
