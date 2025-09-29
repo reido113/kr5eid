@@ -12,7 +12,7 @@ svg path {
   stroke: #00394f;
   stroke-width: 1;
 }
-svg path:active {
+svg path:active, :hover {
   stroke: #006284;
   transition: 0.2s;
   cursor: pointer;
