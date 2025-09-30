@@ -10,10 +10,13 @@ body {
 }
 svg path {
   stroke: #00394f;
-  stroke-width: 1;
+  stroke-width: 0.3;
+  opacity: 0.3;
 }
 svg path:active, svg path:hover {
   stroke: #006284;
+  stroke-width: 1;
   transition: 0.2s;
   cursor: pointer;
+  opacity: 0.9;
 }
