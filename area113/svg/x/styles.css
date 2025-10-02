@@ -1,0 +1,9 @@
+div{
+  padding:10px;
+  border:1px solid black;
+}
+div:hover svg path,
+div:hover{
+  fill:red;
+  color:red;
+}
