@@ -2,8 +2,18 @@ div{
   padding:10px;
   border:1px solid black;
 }
-div:hover svg path,
+/* div:hover svg path,
 div:hover{
   fill:red;
   color:red;
-}
+} */
+/* circle:hover {
+  fill:blue;
+} */
+ svg text{
+  opacity: 0.0;
+ }
+ svg g:hover text{
+  opacity: 1.0;
+  transition: 0.5s;
+ }
