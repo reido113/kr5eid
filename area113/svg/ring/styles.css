@@ -1,0 +1,15 @@
+svg{
+  padding:10px;
+  /* border:1px solid black; */
+}
+
+#freq{
+  fill: none;
+  opacity: 0.0;
+ }
+
+#hovering:hover+#freq{
+  fill: black;
+  opacity: 1.0;
+  transition: 1.0s;
+ }

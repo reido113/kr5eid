@@ -1,7 +1,3 @@
 Add a navigation cheeseburger (top right), or a site map (bottom center)
 
-On click to svg ellipse
-
-On click to svg circle. 
-Make text color none by default and White on click???
 
