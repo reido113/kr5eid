@@ -8,7 +8,7 @@ svg{
   opacity: 0.0;
  }
 
-#hovering:active+#freq{
+#hovering:hover+#freq{
   fill: black;
   opacity: 1.0;
   transition: 1.0s;
