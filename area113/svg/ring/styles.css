@@ -3,18 +3,18 @@ svg{
   /* border:1px solid black; */
 }
 
-#hovering{
+#ring{
   stroke: black;
   stroke-width: 9.0;
  }
 
 #freq{
-  fill: none;
+  /* fill: none; */
   opacity: 0.0;
  }
 
-#hovering:hover+#freq, #hovering:active+#freq{
-  fill: black;
+#ring:hover+#freq, #ring:active+#freq{
+  /* fill: black; */
   opacity: 1.0;
   transition: 1.0s;
  }
