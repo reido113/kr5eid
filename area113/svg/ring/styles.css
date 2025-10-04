@@ -3,6 +3,11 @@ svg{
   /* border:1px solid black; */
 }
 
+#hovering{
+  stroke: black;
+  stroke-width: 9.0;
+ }
+
 #freq{
   fill: none;
   opacity: 0.0;
