@@ -20,11 +20,11 @@
       opacity: 0.0;
     }
 
-    #ring:hover+#freq, #ring:active+#freq{
-      /* fill: black; */
+    /* #ring:hover+#freq, #ring:active+#freq{
       opacity: 1.0;
       transition: 1.0s;
-    }
+    } */
+
   </style>
 </head>
 <body>
@@ -34,14 +34,14 @@
     <g id="entireCircle">
       <g transform="matrix(1.23182,0,0,1.23182,-33.4823,-92.5916)">
         <path ontouchstart="funct()" id="ring" d="M230.133,75.167C342.145,75.167 433.085,166.106 433.085,278.119C433.085,390.131 342.145,481.071 230.133,481.071C118.121,481.071 27.181,390.131 27.181,278.119C27.181,166.106 118.121,75.167 230.133,75.167ZM230.133,80.037C120.809,80.037 32.052,168.795 32.052,278.119C32.052,387.443 120.809,476.2 230.133,476.2C339.457,476.2 428.214,387.443 428.214,278.119C428.214,168.795 339.457,80.037 230.133,80.037Z"/>
-        <!-- <text id="freq" x="45px" y="310px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:100px;">146.520</text> -->
-        <circle id="freq" R="20px" cx="230" cy="280" r="20" fill="red"/>
+        <text id="freq" x="45px" y="310px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:100px;">146.520</text>
+        <!-- <circle id="freq" R="20px" cx="230" cy="280" r="20" fill="red"/> -->
       </g>
     </g>
   </svg>
   <script>
     function funct(){
-      alert("hi");
+      document.getElementById("freq").style.opacity = "1.0";
     }
   </script>
 </body>
